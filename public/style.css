@@ -1,0 +1,112 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a0a2e;
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-container {
+  position: relative;
+}
+
+#ui-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 14px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#room-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+#room-id {
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+#copy-btn {
+  background: #ff6b9d;
+  color: #fff;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+#copy-btn:hover { background: #ff4081; }
+#copy-btn:active { transform: scale(0.95); }
+
+#player-count {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+#controls-help {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Mobile controls */
+#mobile-controls {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.touch-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 107, 157, 0.6);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.touch-btn:active {
+  background: rgba(255, 107, 157, 0.9);
+  transform: scale(0.9);
+}
+
+#btn-jump, #btn-dance {
+  font-size: 12px;
+}
+
+@media (pointer: coarse), (max-width: 768px) {
+  #mobile-controls { display: flex; }
+  #controls-help { display: none; }
+}
